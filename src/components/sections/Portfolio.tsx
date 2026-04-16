@@ -1,4 +1,5 @@
 import { Reveal } from '../Reveal'
+import { Img } from '../Img'
 import { ArrowUpRight } from '../icons'
 import { portfolioIntro, projects } from '../../data/content'
 import { cn } from '../../lib/utils'
@@ -51,9 +52,11 @@ function ProjectBlock({ project, index }: { project: Project; index: number }) {
   return (
     <article className="w-full">
       <Reveal variant="image" className="w-full h-[55vw] max-h-[620px] min-h-[320px] overflow-hidden">
-        <img
+        <Img
           src={project.image}
           alt={project.title}
+          phWidth={1600}
+          phHeight={900}
           className="h-full w-full object-cover"
           loading={index === 0 ? 'eager' : 'lazy'}
         />

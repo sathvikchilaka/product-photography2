@@ -7,7 +7,7 @@ export function DisplayName() {
       <div className="px-4 md:px-8">
         <Reveal
           as="h2"
-          className="display-2xl text-center whitespace-nowrap leading-none"
+          className="display-name text-center leading-none"
         >
           {displayName}
         </Reveal>

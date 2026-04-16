@@ -6,6 +6,9 @@
  * Keeping query string centralized so tone can be tuned globally.
  */
 
+/** Flip to true to render editorial SVG placeholders instead of remote photos. */
+export const useDummyImages = false
+
 const UNSPLASH = (id: string, w: number, extra = '') =>
   `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop${extra}`
 

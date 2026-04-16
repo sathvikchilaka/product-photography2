@@ -1,4 +1,5 @@
 import { Reveal } from '../Reveal'
+import { Img } from '../Img'
 import { imageRow } from '../../data/content'
 
 export function ImageRow() {
@@ -10,11 +11,13 @@ export function ImageRow() {
             key={img.src}
             variant="image"
             delay={i * 100}
-            className="aspect-[3/4] overflow-hidden"
+            className="aspect-3/4 overflow-hidden"
           >
-            <img
+            <Img
               src={img.src}
               alt={img.alt}
+              phWidth={600}
+              phHeight={800}
               className="h-full w-full object-cover"
               loading="lazy"
             />

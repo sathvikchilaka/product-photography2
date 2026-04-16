@@ -1,4 +1,5 @@
 import { Reveal } from '../Reveal'
+import { Img } from '../Img'
 import { about } from '../../data/content'
 
 export function About() {
@@ -26,7 +27,7 @@ export function About() {
                 key={img.src}
                 className="w-[180px] lg:w-[220px] aspect-[4/3] overflow-hidden"
               >
-                <img src={img.src} alt={img.alt} className="h-full w-full object-cover" loading="lazy" />
+                <Img src={img.src} alt={img.alt} phWidth={520} phHeight={390} className="h-full w-full object-cover" loading="lazy" />
               </div>
             ))}
           </Reveal>
@@ -35,9 +36,11 @@ export function About() {
         {/* Portrait + bio + stats */}
         <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-[minmax(320px,420px)_1fr] gap-10 md:gap-16 items-start">
           <Reveal variant="image" className="w-full aspect-[3/4] overflow-hidden">
-            <img
+            <Img
               src={about.portrait.src}
               alt={about.portrait.alt}
+              phWidth={900}
+              phHeight={1200}
               className="h-full w-full object-cover"
               loading="lazy"
             />
