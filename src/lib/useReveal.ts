@@ -18,6 +18,12 @@ export function useReveal<T extends HTMLElement>(opts: Options = {}) {
       el.setAttribute('data-revealed', 'true')
       return
     }
+    const rect = el.getBoundingClientRect()
+    const vh = window.innerHeight || document.documentElement.clientHeight
+    if (rect.top < vh && rect.bottom > 0) {
+      el.setAttribute('data-revealed', 'true')
+      if (once) return
+    }
     const io = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
