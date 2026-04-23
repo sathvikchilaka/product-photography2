@@ -1,5 +1,4 @@
 import { Reveal } from '../Reveal'
-import { displayName } from '../../data/content'
 
 export function DisplayName() {
   return (
@@ -7,9 +6,9 @@ export function DisplayName() {
       <div className="px-4 md:px-8">
         <Reveal
           as="h2"
-          className="display-name text-center leading-none"
+          className="display-name tracking-wider leading-64 text-nowrap uppercase text-8xl font-black text-center"
         >
-          {displayName}
+          Santhosh Racharla
         </Reveal>
       </div>
     </section>

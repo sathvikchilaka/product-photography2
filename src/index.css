@@ -88,13 +88,6 @@
       line-height: 1;
     }
   }
-  /* MAX MORGAN — 10 chars, sized to fill width on desktop. */
-  .display-name {
-    font-size: clamp(4.5rem, 17vw, 15rem);
-    line-height: 0.9;
-    letter-spacing: -0.055em;
-    font-weight: 800;
-  }
   /* Let's Work Together — 20 chars (incl spaces), scaled down so it fits one line on desktop. */
   .display-cta {
     font-size: clamp(3rem, 9vw, 8rem);

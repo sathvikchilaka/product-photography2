@@ -1,16 +1,12 @@
 /**
- * Central content/data for the Max Morgan portfolio.
- * Swap image URLs here when real Figma exports become available.
- *
- * Image convention: stable Unsplash photo IDs rendered at fixed widths.
- * Keeping query string centralized so tone can be tuned globally.
+ * Central content/data for the Santhosh Racharla portfolio.
+ * Images live in /public/images and are referenced by absolute path.
  */
 
-/** Flip to true to render editorial SVG placeholders instead of remote photos. */
+/** Flip to true to render editorial SVG placeholders instead of real photos. */
 export const useDummyImages = false
 
-const UNSPLASH = (id: string, w: number, extra = '') =>
-  `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop${extra}`
+const IMG = (name: string) => `/images/${name}`
 
 export const nav = [
   { label: 'Home', href: '#top' },
@@ -30,32 +26,30 @@ export const hero = {
 }
 
 export const collageImages = [
-  { src: UNSPLASH('1524504388940-b1c1722653e1', 700), alt: 'Editorial portrait in monochrome' },
-  { src: UNSPLASH('1521572163474-6864f9cf17ab', 700), alt: 'Street fashion campaign shot' },
-  { src: UNSPLASH('1509631179647-0177331693ae', 1000), alt: 'Studio fashion portrait, yellow suit' },
-  { src: UNSPLASH('1519699047748-de8e457a634e', 600), alt: 'Fashion portrait with florals' },
-  { src: UNSPLASH('1515886657613-9f3515b0c78f', 600), alt: 'Studio portrait on white backdrop' },
+  { src: IMG('san_2105.jpg'), alt: 'Editorial portrait in monochrome' },
+  { src: IMG('san_2423.jpg'), alt: 'Fashion campaign shot' },
+  { src: IMG('wba_5646.jpg'), alt: 'Studio fashion portrait' },
+  { src: IMG('san_2471.jpg'), alt: 'Fashion portrait' },
+  { src: IMG('san_2492.jpg'), alt: 'Studio portrait' },
 ]
-
-export const displayName = 'MAX MORGAN'
 
 export const about = {
   eyebrow: 'About Me',
   title: ['The Art Behind', 'the Lens'],
   studioThumbs: [
-    { src: UNSPLASH('1533228876829-65c94e7b5025', 520), alt: 'Studio setup with strobe' },
-    { src: UNSPLASH('1542038784456-1ea8e935640e', 520), alt: 'Studio lighting and stands' },
+    { src: IMG('san_2385.jpg'), alt: 'On-location shoot' },
+    { src: IMG('san_2434.jpg'), alt: 'Behind-the-scenes setup' },
   ],
   portrait: {
-    src: UNSPLASH('1507003211169-0a1dd7228f2d', 900),
-    alt: 'Max Morgan holding a camera',
+    src: IMG('san_2514.jpg'),
+    alt: 'Santhosh Racharla holding a camera',
   },
   bio:
-    "Hello, I'm Max — a fashion photographer who believes that the most powerful images are born from authentic connections. My approach to fashion photography goes beyond documenting clothing—it's about capturing moments where design, identity, and emotion intersect. I believe in minimal intervention, allowing natural light and authentic movement to guide my compositions. Every shoot begins with a concept board, evolves through collaborative energy on set, and culminates in images that honor both the designer's vision and the model's unique presence.",
+    "Hello, I'm Santhosh — a wedding photographer who believes that the most powerful images are born from authentic connections. My approach to wedding photography goes beyond documenting clothing—it's about capturing moments where design, identity, and emotion intersect. I believe in minimal intervention, allowing natural light and authentic movement to guide my compositions. Every shoot begins with a concept board, evolves through collaborative energy on set, and culminates in images that honor both the designer's vision and the model's unique presence.",
   stats: [
     { value: '98%', label: 'Client Return Rate for repeat collaborations' },
-    { value: '85+', label: 'Professional Models have worked' },
-    { value: '12+', label: 'Fashion Weeks documented' },
+    { value: '85+', label: 'Weddings documented' },
+    { value: '12+', label: 'Clients served' },
   ],
 }
 
@@ -68,7 +62,7 @@ export const portfolioIntro = {
 export const projects = [
   {
     title: "Vintage-Modern Fusion in Jakarta's Old Quarter",
-    image: UNSPLASH('1529139574466-a303027c1d8b', 1400),
+    image: IMG('san_2148.jpg'),
     tags: ['Editorial', 'Natural Light', 'Intimate'],
     description:
       "Capturing the feeling of finding grandmother's vintage coat in a modern city. Shot at dawn in Old Jakarta, blending weathered walls with luxury fabrics. Each frame tells stories of timeless elegance meeting edge.",
@@ -76,7 +70,7 @@ export const projects = [
   },
   {
     title: 'Minimalist Natural Light Fashion Editorial',
-    image: UNSPLASH('1496440737103-cd596325d314', 1400),
+    image: IMG('san_2224.jpg'),
     tags: ['Editorial', 'Natural Light', 'Intimate'],
     description:
       "Returning to photography's essence: the dance between light and darkness. Using only window light and minimal styling, we created portraits that feel like intimate conversations through subtraction.",
@@ -84,7 +78,7 @@ export const projects = [
   },
   {
     title: 'Cultural Heritage Fashion with Traditional Batik',
-    image: UNSPLASH('1488426862026-3ee34a7d66df', 1400),
+    image: IMG('san_2412.jpg'),
     tags: ['Editorial', 'Natural Light', 'Intimate'],
     description:
       'Working with traditional craftswomen in Solo, we created dialogue between centuries-old techniques and contemporary silhouettes. Model Sari brought personal stories to each frame, honoring cultural continuity.',
@@ -100,10 +94,10 @@ export const published = {
 }
 
 export const imageRow = [
-  { src: UNSPLASH('1519699047748-de8e457a634e', 900), alt: 'Editorial, b&w silhouette' },
-  { src: UNSPLASH('1533227268428-f9ed0900fb3b', 900), alt: 'Red dress in motion' },
-  { src: UNSPLASH('1522673607200-164d1b6ce486', 900), alt: 'Model lounging editorial' },
-  { src: UNSPLASH('1506863530036-1efeddceb993', 900), alt: 'Close-up beauty portrait' },
+  { src: IMG('san_2497.jpg'), alt: 'Editorial portrait' },
+  { src: IMG('san_2445.jpg'), alt: 'Fashion in motion' },
+  { src: IMG('san_2148.jpg'), alt: 'Editorial moment' },
+  { src: IMG('san_2434.jpg'), alt: 'Close-up portrait' },
 ]
 
 export const cta = {

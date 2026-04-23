@@ -10,7 +10,7 @@ export function Logo({ className, size = 34 }: LogoProps) {
   return (
     <a
       href="#top"
-      aria-label="Max Morgan — home"
+      aria-label="Santhosh Racharla — home"
       className={cn(
         'inline-flex items-baseline leading-none text-foreground transition-opacity hover:opacity-80',
         className,
