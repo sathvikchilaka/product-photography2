@@ -41,7 +41,7 @@ export const about = {
     { src: IMG('san_2434.jpg'), alt: 'Behind-the-scenes setup' },
   ],
   portrait: {
-    src: IMG('san_2514.jpg'),
+    src: IMG('santosh_dp.jpg'),
     alt: 'Santhosh Racharla holding a camera',
   },
   bio:

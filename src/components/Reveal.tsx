@@ -5,7 +5,7 @@ import { cn } from '../lib/utils'
 type RevealProps = HTMLAttributes<HTMLElement> & {
   as?: ElementType
   delay?: number
-  variant?: 'fade' | 'image'
+  variant?: 'fade' | 'image' | 'slide'
 }
 
 export function Reveal({
@@ -17,12 +17,10 @@ export function Reveal({
   ...rest
 }: RevealProps) {
   const ref = useReveal<HTMLElement>({ delay })
+  const variantClass =
+    variant === 'image' ? 'reveal-img' : variant === 'slide' ? 'reveal-slide' : 'reveal'
   return (
-    <Tag
-      ref={ref as never}
-      className={cn(variant === 'image' ? 'reveal-img' : 'reveal', className)}
-      {...rest}
-    >
+    <Tag ref={ref as never} className={cn(variantClass, className)} {...rest}>
       {children}
     </Tag>
   )

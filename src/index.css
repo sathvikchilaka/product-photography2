@@ -107,34 +107,89 @@
     letter-spacing: -0.005em;
   }
 
+  /* Reveal system — CSS transition flipped by JS setting data-revealed="true".
+     The JS hook (useReveal) guarantees every element ends up revealed by
+     handling three mount cases: above-viewport (instant), in-viewport (rAF +
+     transition), below-viewport (IntersectionObserver). */
   .reveal {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(22px);
     transition:
-      opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
-      transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+      opacity 520ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
     will-change: opacity, transform;
   }
   .reveal[data-revealed="true"] {
     opacity: 1;
     transform: none;
   }
+
   .reveal-img {
     clip-path: inset(0 0 100% 0);
-    transition: clip-path 1100ms cubic-bezier(0.77, 0, 0.175, 1);
+    transition: clip-path 620ms cubic-bezier(0.77, 0, 0.175, 1);
     will-change: clip-path;
   }
   .reveal-img[data-revealed="true"] {
     clip-path: inset(0 0 0 0);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .reveal,
-    .reveal-img {
+  .reveal-slide {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition:
+      opacity 560ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+  .reveal-slide[data-revealed="true"] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* First-paint mount animations — time-based, for hero (above-fold). */
+  @keyframes mount-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
       opacity: 1;
       transform: none;
-      clip-path: none;
-      transition: none;
+    }
+  }
+  @keyframes mount-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+  }
+  .mount-reveal {
+    animation: mount-fade-up 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--mount-delay, 0ms);
+  }
+  .mount-reveal-scale {
+    animation: mount-scale-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--mount-delay, 0ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .reveal-img,
+    .reveal-slide,
+    .mount-reveal,
+    .mount-reveal-scale {
+      opacity: 1 !important;
+      transform: none !important;
+      clip-path: none !important;
+      filter: none !important;
+      transition: none !important;
+      animation: none !important;
     }
   }
 

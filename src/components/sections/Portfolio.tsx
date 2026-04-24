@@ -51,16 +51,16 @@ type Project = (typeof projects)[number]
 function ProjectBlock({ project, index }: { project: Project; index: number }) {
   return (
     <article className="w-full">
-      <Reveal variant="image" className="w-full h-[55vw] max-h-[620px] min-h-[320px] overflow-hidden">
+      <div className="group w-full h-[55vw] max-h-[620px] min-h-[320px] overflow-hidden">
         <Img
           src={project.image}
           alt={project.title}
           phWidth={1600}
           phHeight={900}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.035]"
           loading={index === 0 ? 'eager' : 'lazy'}
         />
-      </Reveal>
+      </div>
 
       <div className="container-site">
         <div className="mt-6 md:mt-8 grid grid-cols-1 md:grid-cols-[1.15fr_1fr] gap-6 md:gap-12">

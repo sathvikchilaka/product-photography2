@@ -21,7 +21,7 @@ export function About() {
             </Reveal>
           </div>
 
-          <Reveal delay={120} className="hidden md:flex gap-4 pt-6">
+          <div className="hidden md:flex gap-4 pt-6">
             {about.studioThumbs.map((img) => (
               <div
                 key={img.src}
@@ -30,12 +30,12 @@ export function About() {
                 <Img src={img.src} alt={img.alt} phWidth={520} phHeight={390} className="h-full w-full object-cover" loading="lazy" />
               </div>
             ))}
-          </Reveal>
+          </div>
         </div>
 
         {/* Portrait + bio + stats */}
         <div className="mt-10 md:mt-16 grid grid-cols-1 md:grid-cols-[minmax(320px,420px)_1fr] gap-10 md:gap-16 items-start">
-          <Reveal variant="image" className="w-full aspect-[3/4] overflow-hidden">
+          <div className="w-full aspect-3/4 overflow-hidden">
             <Img
               src={about.portrait.src}
               alt={about.portrait.alt}
@@ -44,7 +44,7 @@ export function About() {
               className="h-full w-full object-cover"
               loading="lazy"
             />
-          </Reveal>
+          </div>
 
           <div className="flex flex-col gap-10 md:gap-14 md:pt-6">
             <Reveal

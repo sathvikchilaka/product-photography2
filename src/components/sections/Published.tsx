@@ -80,13 +80,13 @@ export function Published() {
             </Reveal>
           </div>
 
-          <Reveal delay={120} className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {Array.from({ length: 6 }).map((_, i) => (
               <LogoTile key={i}>
                 <LogoVariant v={i} />
               </LogoTile>
             ))}
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>
